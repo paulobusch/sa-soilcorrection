@@ -20,4 +20,9 @@ public enum FonteCalcioMagnesio implements IFonteNutriente {
     public double getTeorFonte() {
         return this.teorFonte;
     }
+
+    @Override
+    public Set<NutrienteAdicional> getNutrientesAdicionais() {
+        return Set.of();
+    }
 }

@@ -1,5 +1,5 @@
 package edu.utfpr.cp.dacom.sa.soilcorrection;
 
-public class CorrecaoPotassio implements ICorrecaoNutriente<FontePotassio> {
+public class CorrecaoCalcioMagnesio implements ICorrecaoNutriente<FonteCalcioMagnesio> {
 
 }
