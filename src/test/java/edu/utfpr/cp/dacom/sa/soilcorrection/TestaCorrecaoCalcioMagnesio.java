@@ -7,12 +7,23 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TestaCorrecaoCalcioMagnesio {
 
     @Test
+    public void testaNecessidadeAdicionarCMolcDcm3() {
+        
+        var correcaoCalcioMagnesio = new CorrecaoCalcioMagnesio();
+
+        var necessidadeAdicionarCMolcDcm3 = correcaoCalcioMagnesio
+            .calculaNecessidadeAdicionarCMolcDcm3(5.77, 0.447, 0.55);
+        
+        assertEquals(1.312, necessidadeAdicionarCMolcDcm3, 0.02);
+    }
+
+    @Test
     public void testaQuantidadeAplicar() {
-        var necessidadeCalcario = 6.25;
+        var necessidadeCalcario = 1.29;
 
         var correcaoCalcioMagnesio = new CorrecaoCalcioMagnesio();
 
-        assertEquals(1850.0,
+        assertEquals(1.85,
             correcaoCalcioMagnesio.calculaQuantidadeAplicar(
                 necessidadeCalcario, 
                 FonteCalcioMagnesio.CALCLARIO_CALCITICO
@@ -22,7 +33,7 @@ public class TestaCorrecaoCalcioMagnesio {
 
     @Test
     public void testaCustoReaisHa() {
-        var qtdeCalcarioAplicar = 6.25;
+        var qtdeCalcarioAplicar = 1.29;
 
         var correcaoCalcioMagnesio = new CorrecaoCalcioMagnesio();
         
@@ -34,4 +45,18 @@ public class TestaCorrecaoCalcioMagnesio {
         );
     }
 
+    @Test
+    public void testaNutrientesAdicionais() {
+        var correcaoCalcioMagnesio = new CorrecaoCalcioMagnesio();
+        
+        var qtdeCalcioMagnesioAplicar = 1.85;
+
+        assertEquals(1, 
+            correcaoCalcioMagnesio
+                .getNutrientesAdicionais(
+                    qtdeCalcioMagnesioAplicar, 
+                    FonteCalcioMagnesio.GESSO_AGRICOLA
+                ).size()
+        );
+    }
 }
