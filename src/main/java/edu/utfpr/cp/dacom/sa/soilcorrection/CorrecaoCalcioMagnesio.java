@@ -1,27 +1,20 @@
 package edu.utfpr.cp.dacom.sa.soilcorrection;
 
-public class CorrecaoCalcioMagnesio implements ICorrecaoNutriente<FonteCalcioMagnesio> {
-    public double calculaNecessidadeAdicionarCMolcDcm3 (
-        double teorSolo,
-        double participacaoCTCExistente,
-        double participacaoCTCDesejada
-    ) {
+public class CorrecaoCalcioMagnesio 
+        implements ICorrecaoNutriente<FonteCalcioMagnesio> {
 
-            if (teorSolo <= 0) {
-                throw new IllegalArgumentException();
-            }
+    public double calculaQuantidadeAplicar(
+        double qtdeFonteAdicionar, 
+        double prntPercent) {
 
-            if (participacaoCTCExistente <= 0) {
-                throw new IllegalArgumentException();
-            }
+        if (qtdeFonteAdicionar <= 0) {
+            throw new IllegalArgumentException();
+        }
 
-            if (participacaoCTCDesejada <= 0) {
-                throw new IllegalArgumentException();
-            }
+        if (prntPercent <= 0) {
+            throw new IllegalArgumentException();
+        }
 
-            return (teorSolo 
-                    * participacaoCTCDesejada 
-                    / participacaoCTCExistente) 
-                    - teorSolo;
+        return qtdeFonteAdicionar / prntPercent;
     }
 }

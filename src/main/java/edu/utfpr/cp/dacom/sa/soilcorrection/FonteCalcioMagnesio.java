@@ -2,23 +2,25 @@ package edu.utfpr.cp.dacom.sa.soilcorrection;
 
 import java.util.Set;
 
-public enum FonteCalcioMagnesio implements IFonteNutriente {
-    CALCLARIO_DOLOMITICO(0.304, Set.of()),
-    CALCLARIO_CALCITICO(0.56, Set.of()),
-    CALCLARIO_CONCHA(0.54, Set.of()),
-    GESSO_AGRICOLA(0.29, Set.of(new NutrienteAdicional(NomeNutrienteAdicional.ENXOFRE, 1.5))),
-    HIDROXIDO_CALCIO(0.757, Set.of()),
-    CALCARIO_MAGNESIO(0.35, Set.of());
+public enum FonteCalcioMagnesio 
+        implements IFonteNutriente {
+
+    CALCARIO_DOLOMITICO(30.4, Set.of()),
+    CALCARIO_CALCITICO(56.0, Set.of()),
+    CALCARIO_CONCHA(54.0, Set.of()),
+    GESSO_AGRICOLA(29.0, Set.of(new NutrienteAdicional(NomeNutrienteAdicional.ENXOFRE, 0.15))),
+    HIDROXIDO_CALCIO(75.7, Set.of()),
+    CALCARIO_MAGNESIANO(35.0, Set.of());
 
     private final double teorFonte;
-    private final Set<NutrienteAdicional> nutrientesAdicionais;
+    private final Set<NutrienteAdicional> nutrienteAdicionais;
 
     FonteCalcioMagnesio(
         double teorFonte,
-        final Set<NutrienteAdicional> nutrientesAdicionais) {
-
+        final Set<NutrienteAdicional> nutrienteAdicionais
+    ) {
         this.teorFonte = teorFonte;
-        this.nutrientesAdicionais = nutrientesAdicionais;
+        this.nutrienteAdicionais = nutrienteAdicionais;
     }
 
     @Override
@@ -28,6 +30,7 @@ public enum FonteCalcioMagnesio implements IFonteNutriente {
 
     @Override
     public Set<NutrienteAdicional> getNutrientesAdicionais() {
-        return this.nutrientesAdicionais;
+        return this.nutrienteAdicionais;
     }
+
 }

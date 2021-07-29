@@ -7,56 +7,61 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TestaCorrecaoCalcioMagnesio {
 
     @Test
-    public void testaNecessidadeAdicionarCMolcDcm3() {
-        
-        var correcaoCalcioMagnesio = new CorrecaoCalcioMagnesio();
-
-        var necessidadeAdicionarCMolcDcm3 = correcaoCalcioMagnesio
-            .calculaNecessidadeAdicionarCMolcDcm3(5.77, 0.447, 0.55);
-        
-        assertEquals(1.312, necessidadeAdicionarCMolcDcm3, 0.02);
-    }
-
-    @Test
-    public void testaQuantidadeAplicar() {
-        var necessidadeCalcario = 1.29;
-
-        var correcaoCalcioMagnesio = new CorrecaoCalcioMagnesio();
-
-        assertEquals(1.85,
-            correcaoCalcioMagnesio.calculaQuantidadeAplicar(
-                necessidadeCalcario, 
-                FonteCalcioMagnesio.CALCLARIO_CALCITICO
-            )
-        );
-    }
-
-    @Test
     public void testaCustoReaisHa() {
-        var qtdeCalcarioAplicar = 1.29;
 
         var correcaoCalcioMagnesio = new CorrecaoCalcioMagnesio();
-        
-        assertEquals(922.68, 
+
+        var qtdeCalcioMagnesioAplicarKgHa = 1844.76;
+
+        assertEquals(
+            922.68, 
             correcaoCalcioMagnesio.calculaCusto(
-                500.0,
-                qtdeCalcarioAplicar
-            )
-        );
+                500.0, 
+                qtdeCalcioMagnesioAplicarKgHa),
+            0.5);
     }
 
     @Test
     public void testaNutrientesAdicionais() {
+
         var correcaoCalcioMagnesio = new CorrecaoCalcioMagnesio();
         
-        var qtdeCalcioMagnesioAplicar = 1.85;
+        var qtdeCalcioMagnesioAplicarKgHa = 1844.76;
 
-        assertEquals(1, 
-            correcaoCalcioMagnesio
-                .getNutrientesAdicionais(
-                    qtdeCalcioMagnesioAplicar, 
-                    FonteCalcioMagnesio.GESSO_AGRICOLA
-                ).size()
-        );
+        assertEquals(
+            1, 
+            correcaoCalcioMagnesio.getNutrientesAdicionais(
+                    qtdeCalcioMagnesioAplicarKgHa, 
+                    FonteCalcioMagnesio.GESSO_AGRICOLA)
+                        .size());
+
+        qtdeCalcioMagnesioAplicarKgHa = 3.51 * 1000;
+
+        assertEquals(
+            526.16, 
+            correcaoCalcioMagnesio.getNutrientesAdicionais(
+                qtdeCalcioMagnesioAplicarKgHa, 
+                    FonteCalcioMagnesio.GESSO_AGRICOLA)
+                        .stream()
+                        .findFirst()
+                        .get()
+                        .getCorrecaoAdicional(),
+            0.5);
     }
+
+    @Test
+    public void testaQtdeAplicar() {
+
+        double qtdeFonteAdicionar = 1.291755;
+        double prntPercent = 0.7;
+
+        assertEquals(1.85, 
+            new CorrecaoCalcioMagnesio()
+                .calculaQuantidadeAplicar(
+                    qtdeFonteAdicionar, 
+                    prntPercent),
+            0.05);
+
+    }
+
 }
