@@ -5,7 +5,8 @@ public class CorrecaoCalcioMagnesio
 
     public double calculaQuantidadeAplicar(
         double qtdeFonteAdicionar, 
-        double prntPercent) {
+        double prntPercent
+    ) {
 
         if (qtdeFonteAdicionar <= 0) {
             throw new IllegalArgumentException();
