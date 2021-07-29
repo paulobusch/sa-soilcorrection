@@ -1,7 +1,6 @@
 package edu.utfpr.cp.dacom.sa.soilcorrection;
 
 public enum TexturaSolo {
-    
     ARGILOSO {
         public NutrientesCTC calculaValorIdeal() {
             return new NutrientesCTC(9.0, 0.35, 6.0, 1.5, 9.0, 0.0, 0.0);

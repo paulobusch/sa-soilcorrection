@@ -5,5 +5,4 @@ public enum NomeNutrienteAdicional {
     CALCIO,
     NITROGENIO,
     MAGNESIO;
-    
 }

@@ -6,7 +6,8 @@ public interface ICorrecaoNutriente<T extends IFonteNutriente> {
     
     public default double calculaCusto(
         double custoFonte, 
-        double qtdeAplicar) {
+        double qtdeAplicar
+    ) {
 
         if (custoFonte <= 0) {
             throw new IllegalArgumentException();
@@ -21,7 +22,8 @@ public interface ICorrecaoNutriente<T extends IFonteNutriente> {
 
     public default Set<NutrienteAdicional> getNutrientesAdicionais(
         double qtdeAplicar, 
-        T fonteNutriente) {
+        T fonteNutriente
+    ) {
 
         fonteNutriente
             .getNutrientesAdicionais()
@@ -36,7 +38,8 @@ public interface ICorrecaoNutriente<T extends IFonteNutriente> {
 
     public default double calculaEficienciaNutriente(
         double qtdeNutrienteAdicionar, 
-        double eficienciaNutriente) {
+        double eficienciaNutriente
+    ) {
 
         if (qtdeNutrienteAdicionar <= 0) {
             throw new IllegalArgumentException();
