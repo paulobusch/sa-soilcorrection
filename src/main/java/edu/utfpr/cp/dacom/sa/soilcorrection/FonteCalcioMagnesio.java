@@ -14,7 +14,7 @@ public enum FonteCalcioMagnesio implements IFonteNutriente {
     HIDROXIDO_CALCIO(75.7, Set.of()),
     CALCARIO_MAGNESIANO(35.0, Set.of());
 
-    @Getter @NonNull
+    @Getter
     private final double teorFonte;
 
     @Getter @NonNull

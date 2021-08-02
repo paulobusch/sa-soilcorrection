@@ -11,7 +11,7 @@ public enum FonteFosforo implements IFonteNutriente {
     SUPERFOSFATO_TRIPO(0.41, Set.of(new NutrienteAdicional(NomeNutrienteAdicional.CALCIO, 0.2))),
     MAP(0.48, Set.of(new NutrienteAdicional(NomeNutrienteAdicional.CALCIO, 0.09)));
 
-    @Getter @NonNull
+    @Getter
     private final double teorFonte;
 
     @Getter @NonNull

@@ -10,7 +10,7 @@ public class NutrienteAdicional {
     @NonNull
     private final NomeNutrienteAdicional nome;
 
-    @Getter @NonNull
+    @Getter
     private final double teorNutriente;
 
     @Getter @Setter
