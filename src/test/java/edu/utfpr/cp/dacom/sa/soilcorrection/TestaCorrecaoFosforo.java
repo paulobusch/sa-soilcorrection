@@ -4,13 +4,15 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import lombok.val;
+
 public class TestaCorrecaoFosforo {
 
     @Test
     public void testaConverteMgDm3EmKgHa() {
 
-        var teorFosforoAdicionarMgDm3 = 3.41;
-        var teorFosforoAdicionarKgHa = new ConverteMgDm3EmKgHa()
+        val teorFosforoAdicionarMgDm3 = 3.41;
+        val teorFosforoAdicionarKgHa = new ConverteMgDm3EmKgHa()
         .converte(teorFosforoAdicionarMgDm3);
         
         assertEquals(6.82, teorFosforoAdicionarKgHa);
@@ -19,8 +21,8 @@ public class TestaCorrecaoFosforo {
     @Test
     public void testaConverteKgHaEmP2O5() {
         
-        var teorFosforoAdicionarKgHa = 6.82;
-        var teorFosforoAdicionarP2O5 = new ConverteKgHaEmP2O5()
+        val teorFosforoAdicionarKgHa = 6.82;
+        val teorFosforoAdicionarP2O5 = new ConverteKgHaEmP2O5()
                                     .converte(teorFosforoAdicionarKgHa);
         
         assertEquals(15.6178, teorFosforoAdicionarP2O5);
@@ -29,11 +31,11 @@ public class TestaCorrecaoFosforo {
     @Test
     public void testaNecessidadeFosforo() {
 
-        var teorFosforoAdicionarP2O5 = 15.6178;
+        val teorFosforoAdicionarP2O5 = 15.6178;
 
-        var correcaoFosforo = new CorrecaoFosforo();
+        val correcaoFosforo = new CorrecaoFosforo();
 
-        var necessidadeFosforo = correcaoFosforo
+        val necessidadeFosforo = correcaoFosforo
                     .calculaEficienciaNutriente(teorFosforoAdicionarP2O5, 0.7);
 
         assertEquals(22.31114285714286, necessidadeFosforo);
@@ -42,9 +44,9 @@ public class TestaCorrecaoFosforo {
     @Test
     public void testaQuantidadeAplicar() {
 
-        var necessidadeFosforo = 22.31114285714286;
+        val necessidadeFosforo = 22.31114285714286;
 
-        var correcaoFosforo = new CorrecaoFosforo();
+        val correcaoFosforo = new CorrecaoFosforo();
 
         assertEquals(123.95079365079366,
                 correcaoFosforo.calculaQuantidadeAplicar(
@@ -56,9 +58,9 @@ public class TestaCorrecaoFosforo {
     @Test
     public void testaCustoReaisHa() {
 
-        var correcaoFosforo = new CorrecaoFosforo();
+        val correcaoFosforo = new CorrecaoFosforo();
         
-        var qtdeFosforoAplicar = 123.95079365079366;
+        val qtdeFosforoAplicar = 123.95079365079366;
         
         assertEquals(156.178, correcaoFosforo.calculaCusto(
                                                         1260.0, 
@@ -69,9 +71,9 @@ public class TestaCorrecaoFosforo {
     @Test
     public void testaNutrientesAdicionais() {
 
-        var correcaoFosforo = new CorrecaoFosforo();
+        val correcaoFosforo = new CorrecaoFosforo();
         
-        var qtdeFosforoAplicar = 123.95079365079366;
+        val qtdeFosforoAplicar = 123.95079365079366;
 
         assertEquals(2, correcaoFosforo.getNutrientesAdicionais(
                                             qtdeFosforoAplicar, 

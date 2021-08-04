@@ -1,5 +1,6 @@
 package edu.utfpr.cp.dacom.sa.soilcorrection;
 
+import lombok.val;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -9,9 +10,9 @@ public class TestaCorrecaoCalcioMagnesio {
     @Test
     public void testaCustoReaisHa() {
 
-        var correcaoCalcioMagnesio = new CorrecaoCalcioMagnesio();
+        val correcaoCalcioMagnesio = new CorrecaoCalcioMagnesio();
 
-        var qtdeCalcioMagnesioAplicarKgHa = 1844.76;
+        val qtdeCalcioMagnesioAplicarKgHa = 1844.76;
 
         assertEquals(
             922.68, 
@@ -24,7 +25,7 @@ public class TestaCorrecaoCalcioMagnesio {
     @Test
     public void testaNutrientesAdicionais() {
 
-        var correcaoCalcioMagnesio = new CorrecaoCalcioMagnesio();
+        val correcaoCalcioMagnesio = new CorrecaoCalcioMagnesio();
         
         var qtdeCalcioMagnesioAplicarKgHa = 1844.76;
 
@@ -52,8 +53,8 @@ public class TestaCorrecaoCalcioMagnesio {
     @Test
     public void testaQtdeAplicar() {
 
-        double qtdeFonteAdicionar = 1.291755;
-        double prntPercent = 0.7;
+        val qtdeFonteAdicionar = 1.291755;
+        val prntPercent = 0.7;
 
         assertEquals(1.85, 
             new CorrecaoCalcioMagnesio()

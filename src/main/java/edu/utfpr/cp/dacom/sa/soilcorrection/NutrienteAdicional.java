@@ -3,8 +3,10 @@ package edu.utfpr.cp.dacom.sa.soilcorrection;
 import lombok.Setter;
 import lombok.Getter;
 import lombok.NonNull;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
+@AllArgsConstructor
 @RequiredArgsConstructor
 public class NutrienteAdicional {
     @NonNull
