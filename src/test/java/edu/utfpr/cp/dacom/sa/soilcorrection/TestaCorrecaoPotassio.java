@@ -4,16 +4,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import lombok.val;
-
 public class TestaCorrecaoPotassio {
 
     @Test
     public void testaNecessidadeAdicionarCMolcDM3() {
         
-        val correcaoPotassio = new CorrecaoPotassio();
+        var correcaoPotassio = new CorrecaoPotassio();
 
-        val necessidadeAdicionarCMolcDM3 = correcaoPotassio
+        var necessidadeAdicionarCMolcDM3 = correcaoPotassio
         .calculaNecessidadeAdicionarCMolcDm3(0.15, 
                                              0.01164, 
                                              0.03);
@@ -25,9 +23,9 @@ public class TestaCorrecaoPotassio {
     @Test
     public void testaConverteCMolcDm3EmMgDm3() {
 
-        val necessidadeAdicionarCMolcDM3 = 0.23659793814432992;
+        var necessidadeAdicionarCMolcDM3 = 0.23659793814432992;
 
-        val cmolcConvertido = new ConverteCMolcDm3EmMgDm3()
+        var cmolcConvertido = new ConverteCMolcDm3EmMgDm3()
                                 .converte(necessidadeAdicionarCMolcDM3);
 
         assertEquals(92.509793814433, cmolcConvertido);
@@ -36,8 +34,8 @@ public class TestaCorrecaoPotassio {
     @Test
     public void testaConverteKgHaEmK2O() {
 
-        val valorKgHa = 185.10;
-        val valorK2o = new ConverteKgHaEmK2O()
+        var valorKgHa = 185.10;
+        var valorK2o = new ConverteKgHaEmK2O()
                             .converte(valorKgHa);
 
         assertEquals(222.11999999999998, valorK2o);
@@ -46,9 +44,9 @@ public class TestaCorrecaoPotassio {
     @Test
     public void testaCalculaEficienciaNutriente() {
 
-        val correcaoPotassio = new CorrecaoPotassio();
+        var correcaoPotassio = new CorrecaoPotassio();
 
-        val eficiencia = correcaoPotassio
+        var eficiencia = correcaoPotassio
                         .calculaEficienciaNutriente(222.12, 0.85);
 
         assertEquals(261.3176470588235, eficiencia);
@@ -57,9 +55,9 @@ public class TestaCorrecaoPotassio {
     @Test
     public void testaQuantidadeAplicar() {
 
-        val correcaoPotassio = new CorrecaoPotassio();
+        var correcaoPotassio = new CorrecaoPotassio();
         
-        val eficiencia = 261.3176470588235;
+        var eficiencia = 261.3176470588235;
         
         assertEquals(450.54766734279923,
         correcaoPotassio.calculaQuantidadeAplicar(eficiencia, FontePotassio.CLORETO_POTASSIO));
@@ -68,9 +66,9 @@ public class TestaCorrecaoPotassio {
     @Test
     public void testaCustoReaisHa() {
 
-        val correcaoPotassio = new CorrecaoPotassio();
+        var correcaoPotassio = new CorrecaoPotassio();
         
-        val qtdeAplicar = 450.54766734279923;
+        var qtdeAplicar = 450.54766734279923;
         
         assertEquals(1126.3691683569982, 
         correcaoPotassio
@@ -84,9 +82,9 @@ public class TestaCorrecaoPotassio {
     @Test
     public void testaNutrientesAdicionais() {
             
-        val correcaoPotassio = new CorrecaoPotassio();
+        var correcaoPotassio = new CorrecaoPotassio();
         
-        val qtdePotassioAplicar = 450.54766734279923;
+        var qtdePotassioAplicar = 450.54766734279923;
 
         assertEquals(0, 
                     correcaoPotassio
