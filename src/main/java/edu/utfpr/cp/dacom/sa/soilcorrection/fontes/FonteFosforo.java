@@ -1,4 +1,8 @@
-package edu.utfpr.cp.dacom.sa.soilcorrection;
+package edu.utfpr.cp.dacom.sa.soilcorrection.fontes;
+
+import edu.utfpr.cp.dacom.sa.soilcorrection.interfaces.IFonteNutriente;
+import edu.utfpr.cp.dacom.sa.soilcorrection.models.NutrienteAdicional;
+import edu.utfpr.cp.dacom.sa.soilcorrection.enums.NomeNutrienteAdicional;
 
 import lombok.Getter;
 import lombok.NonNull;

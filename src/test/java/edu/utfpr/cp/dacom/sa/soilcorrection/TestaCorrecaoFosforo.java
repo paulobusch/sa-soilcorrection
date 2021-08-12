@@ -1,5 +1,10 @@
 package edu.utfpr.cp.dacom.sa.soilcorrection;
 
+import edu.utfpr.cp.dacom.sa.soilcorrection.fontes.FonteFosforo;
+import edu.utfpr.cp.dacom.sa.soilcorrection.correcoes.CorrecaoFosforo;
+import edu.utfpr.cp.dacom.sa.soilcorrection.conversores.ConverteMgDm3EmKgHa;
+import edu.utfpr.cp.dacom.sa.soilcorrection.conversores.ConverteKgHaEmP2O5;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
