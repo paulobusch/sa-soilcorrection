@@ -1,7 +1,7 @@
 package edu.utfpr.cp.dacom.sa.soilcorrection;
 
-import edu.utfpr.cp.dacom.sa.soilcorrection.enums.TexturaSolo;
-import edu.utfpr.cp.dacom.sa.soilcorrection.models.NutrientesCTC;
+import edu.utfpr.cp.dacom.sa.soilcorrection.solos.TexturaSolo;
+import edu.utfpr.cp.dacom.sa.soilcorrection.nutrientes.NutrientesCTC;
 import edu.utfpr.cp.dacom.sa.soilcorrection.correcoes.EquilibrioCorrecaoCTC;
 
 import org.junit.jupiter.api.Test;

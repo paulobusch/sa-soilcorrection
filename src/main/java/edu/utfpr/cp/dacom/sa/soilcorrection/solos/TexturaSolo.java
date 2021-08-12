@@ -1,6 +1,6 @@
-package edu.utfpr.cp.dacom.sa.soilcorrection.enums;
+package edu.utfpr.cp.dacom.sa.soilcorrection.solos;
 
-import edu.utfpr.cp.dacom.sa.soilcorrection.models.NutrientesCTC;
+import edu.utfpr.cp.dacom.sa.soilcorrection.nutrientes.NutrientesCTC;
 
 public enum TexturaSolo {
     ARGILOSO {

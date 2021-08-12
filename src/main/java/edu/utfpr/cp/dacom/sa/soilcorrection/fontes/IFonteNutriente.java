@@ -1,6 +1,6 @@
-package edu.utfpr.cp.dacom.sa.soilcorrection.interfaces;
+package edu.utfpr.cp.dacom.sa.soilcorrection.fontes;
 
-import edu.utfpr.cp.dacom.sa.soilcorrection.models.NutrienteAdicional;
+import edu.utfpr.cp.dacom.sa.soilcorrection.nutrientes.NutrienteAdicional;
 
 import java.util.Set;
 

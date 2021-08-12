@@ -1,6 +1,6 @@
 package edu.utfpr.cp.dacom.sa.soilcorrection.conversores;
 
-import edu.utfpr.cp.dacom.sa.soilcorrection.interfaces.Conversao;
+import edu.utfpr.cp.dacom.sa.soilcorrection.conversores.Conversao;
 
 import lombok.NonNull;
 

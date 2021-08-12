@@ -1,4 +1,4 @@
-package edu.utfpr.cp.dacom.sa.soilcorrection.interfaces;
+package edu.utfpr.cp.dacom.sa.soilcorrection.conversores;
 
 import lombok.NonNull;
 
