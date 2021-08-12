@@ -1,5 +1,8 @@
 package edu.utfpr.cp.dacom.sa.soilcorrection;
 
+import lombok.Builder;
+
+@Builder
 public record NutrientesCTC (
     double fosforo,
     double potassio,
@@ -8,4 +11,4 @@ public record NutrientesCTC (
     double enxofre,
     double aluminio,
     double aluminioHidrogenio
-) {}
+) { }
